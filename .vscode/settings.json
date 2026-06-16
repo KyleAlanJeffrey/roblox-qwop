@@ -1,0 +1,26 @@
+{
+  // This project uses Luau (Roblox). luau-lsp is the language server of record.
+  // The other installed Lua servers don't fully understand Luau syntax
+  // (+=, continue, type annotations, :: casts) and produce false errors, so
+  // their diagnostics are turned off for this workspace.
+
+  // --- luau-lsp: the one we want ---
+  "luau-lsp.sourcemap.enabled": true,
+  "luau-lsp.sourcemap.rojoProjectFile": "default.project.json",
+  "luau-lsp.platform.type": "roblox",
+  "luau-lsp.completion.imports.enabled": true,
+
+  // --- sumneko.lua: plain Lua, not Luau-aware -> silence it ---
+  "Lua.diagnostics.enable": false,
+
+  // --- nightrains.robloxlsp: deprecated in favor of luau-lsp -> silence it ---
+  "robloxLsp.diagnostics.enable": false,
+
+  // selene + stylua handle linting/formatting.
+  "[lua]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  },
+  "[luau]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  }
+}
